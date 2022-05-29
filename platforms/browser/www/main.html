@@ -1,0 +1,468 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.6/esri/css/main.css">
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/themes/Geospatial.css" />
+    <link rel="stylesheet" href="css/themes/Geospatial.min.css" />
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://js.arcgis.com/4.6/"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        var panel = '<div data-role="panel" id="mypanel" data-position="left" data-display="reveal" data-theme="a"'
+            + '<br></br><form><input id="filterControlgroup-input" data-type="search"></form>'
+            + '<div data-role="controlgroup" data-input="#filterControlgroup-input" data-filter="true">'
+            + '<a class="ui-btn ui-shadow ui-corner-all" href="#tour1">National Museum</a>'
+            + '<a class="ui-btn ui-shadow ui-corner-all" href="#tour2">Raffles Statue</a>'
+            + '<a class="ui-btn ui-shadow ui-corner-all" href="#tour3">Merlion Park</a>'
+            + '<a class="ui-btn ui-shadow ui-corner-all" href="#tour4">Orchard Road</a>'
+            + '<a class="ui-btn ui-shadow ui-corner-all" href="#tour5">Gardens by the Bay</a>'
+            + '</div>';
+
+
+        $(document).one('pagebeforecreate', function () {
+            $.mobile.pageContainer.prepend(panel);
+            $("#mypanel").panel().enhanceWithin();
+        });
+
+        function goBack() {
+            window.history.back();
+        }
+
+    </script>
+</head>
+
+<body>
+    <!--Page One -->
+    <div data-role="page" id="pageone">
+        <div data-role="header">
+            <h1>A tour in Singapore</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h2 align="center">Welcome to Singapore!</h2>
+            <img src="img/intro2.jpg" style="width:430px;height:300px; padding-bottom: 10px" />
+            <article>
+                So, you've spent quite a lot of money coming to the Garden City, and you're probably thinking of how best you can spend your
+                time here.
+            </article>
+            <br>
+            <article>
+                In between managing your itinerary well and making this trip as worthwhile as possible, we present to you our one day tour
+                that will make your stay in Singapore an experience that you will never forget.
+            </article>
+            <br>
+            <a href="#mypanel" data-transition="slideup" class="ui-btn ui-corner-all">Click or Swipe left to start the Tour!</a>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="index.html" rel="external" data-icon="home">Home</a>
+                    </li>
+                    <li>
+                        <a href="#pageone" data-icon="grid" class="ui-btn-active">Menu</a>
+                    </li>
+                    <li>
+                        <a href="#pageAbout" data-icon="info">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End of Page One -->
+
+    <!-- Page About -->
+    <div data-role="page" id="pageAbout">
+        <div data-role="header">
+            <h1>About this Application</h1>
+            <a href="#" onclick="goBack()" class="ui-btn ui-btn-inline ui-btn-icon-right
+                ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all">Option</a>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <h3 align="center">Frequently Asked Questions</h3>
+            <div data-role="collapsible" data-mini="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right">
+                <h4>1. What is the purpose of this app? </h4>
+                <p>It provides the geographic location of tourist’s attractions in Singapore which helps users to plan their
+                    trip to visit these locations. This app would be more useful for tourists who wants to explore Singapore</p>
+            </div>
+            <div data-role="collapsible" data-mini="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right">
+                <h4>2. Why should you use this app? </h4>
+                <p>This app is a very simple and user-friendly app that allows easy navigation and makes it easy for you to
+                    find common tourists attractions in Singapore.</p>
+            </div>
+            <div data-role="collapsible" data-mini="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right">
+                <h4>3. What is the duration of the entire tour? </h4>
+                <p>The entire tour will take approximately one full day to complete. This means that you will need to start
+                    it early in the morning and it will end around dinner time at night. It is the perfect plan for a full
+                    day with your family</p>
+            </div>
+            <div data-role="collapsible" data-mini="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right">
+                <h4>4. Are there any places to dine? </h4>
+                <p>Yes, the map will provide you with recommended places to dine at nearby you. So when you are feeling hungry,
+                    just look at the map and it will tell you some of the best places to dine at nearby you!</p>
+            </div>
+            <div data-role="collapsible" data-mini="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right">
+                <h4>5. Is this app available globally? </h4>
+                <p>No. This app is only available in Singapore. However is we do receive good responses from this app, we might
+                    consider making it available in other countries nearby us such as Malaysia or even Thailand.</p>
+            </div>
+
+            <div data-role="collapsible" data-mini="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right">
+                <h4>6. Credits of this Program </h4>
+                <p>This application is solely made by Bryan, Reuben and Shah Boi.</p>
+            </div>
+
+            <h3 align="center">Leave us a feedback!</h3>
+            <form action="https://api.formbucket.com/f/buk_YkRQ6c9KwC3UK1362mamqlRA" method="post" target="_blank">
+                <input type="text" name="email" placeholder="Email" />
+                <textarea name="message"></textarea>
+                <button class="button secondary" type="submit">Submit</button>
+              </form> 
+              
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="index.html" rel="external" data-icon="home">Home</a>
+                    </li>
+                    <li>
+                        <a href="#pageone" data-icon="grid" class="ui-btn-active">Menu</a>
+                    </li>
+                    <li>
+                        <a href="#pageAbout" data-icon="info">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End of Page About -->
+
+    <!-- Page National Museum -->
+    <div data-role="page" id="tour1">
+        <div data-role="header">
+            <h1>National Museum</h1>
+            <a href="#" onclick="goBack()" class="ui-btn ui-btn-inline ui-btn-icon-right
+                    ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all">Option</a>
+            <a href="#mypanel" class="ui-btn ui-btn-inline ui-btn-icon-right
+                    ui-icon-plus ui-btn-icon-notext ui-btn-right ui-shadow ui-corner-all">Option</a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div id="tourmap1" class="MyMap"></div>
+            <p>Are you a foreigner? Are you new to Singapore? Or maybe you're just another Singaporean who doesn’t know about
+                your country? </p>
+            <p>If you answered yes to any of the questions, then the
+                <a href="http://www.yahoo.com"> National Museum of Singapore </a> is the next place to look at!</p>
+            <img src="img/sgmuseum.png" style="width:450px;height:300px; padding-bottom: 10px" />
+
+            <p>The National Museum of Singapore tells you the intriguing story of this country in a manner that is both fun
+                and rewarding. Imagine standing in the midst of a vast darkened space surrounded by a massive video montage
+                showing everyday life in Singapore while a rousing symphony plays in the background. </p>
+            <p>A selection of cafes and restaurants, such as
+                <a href="#">Flutes Restaurant Bar </a> as well as a retail space to pick up that souvenir round off a spectacular cultural
+                offering. How could anyone not visit this place?!</p>
+            <a href="#tour1part2" class="ui-btn ui-corner-all">Click here to find out how to get there!</a>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="index.html" rel="external" data-icon="home">Home</a>
+                    </li>
+                    <li>
+                        <a href="#pageone" data-icon="grid" class="ui-btn-active">Menu</a>
+                    </li>
+                    <li>
+                        <a href="#pageAbout" data-icon="info">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End of National Museum -->
+
+    <!-- Direction to National Museum -->
+    <div data-role="page" id="tour1part2">
+        <div data-role="header">
+            <h1>National Museum</h1>
+            <a href="#" onclick="goBack()" class="ui-btn ui-btn-inline ui-btn-icon-right
+                    ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all">Option</a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h3 align="center">Direction to National Museum</h3>
+            <div id="tourmap2" class="MyMap"></div>
+            <span id="layerToggle">
+                <input type="checkbox" id="streetsLyr"> Transportation Layer
+            </span>
+        </div>
+        <div data-role="footer" data-position="fixed">
+        </div>
+    </div>
+    <!-- End of Direction to National Museum -->
+
+    <!-- Page Raffles Statue -->
+    <div data-role="page" id="tour2">
+        <div data-role="header">
+            <h1>Raffles Statue</h1>
+            <a href="#" onclick="goBack()" class="ui-btn ui-btn-inline ui-btn-icon-right
+                    ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all">Option</a>
+            <a href="#mypanel" class="ui-btn ui-btn-inline ui-btn-icon-right
+                    ui-icon-plus ui-btn-icon-notext ui-btn-right ui-shadow ui-corner-all">Option</a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div id="tourmap3" class="MyMap"></div>
+            <p>Arms folded and looking thoughtfully out to sea, the white polymarble statue of Raffles at the Singapore River
+                is often photographed.</p>
+            <img src="img/raffles.png" style="width:430px;height:300px; padding-bottom: 10px" />
+
+            <p>Take your selfies with this popular figure, located at the historic Raffles Landing Site where Raffles was believed
+                to first set foot on the island in 1819. How amazing would that be? Reliving a moment almost two centuries
+                ago which led to the founding of this amazing and magnificent country!</p>
+            <p>The statue is actually a copy of the original dark bronze statue, and was placed here in 1969 on the 150th anniversary
+                of Singapore’s founding. If you want to see the much older, original statue, it’s just a short stroll away,
+                in front of
+                <a href="#popupPhotoLandscape" data-rel="popup"> Victoria Memorial Hall at Empress Place. </a> Sculpted by renowned Thomas Woolner, it was unveiled on Jubilee
+                Day on 27 June 1887. Definitely a must see place for any visitor who comes to Singapore!</p>
+            <br>
+            <a href="#tour2part2" class="ui-btn ui-corner-all">Click here to find out how to get there!</a>
+            <div data-role="popup" id="popupPhotoLandscape" class="photopopup" data-overlay-theme="a" data-corners="false" data-tolerance="10,10">
+
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="img/rafflesb.png">
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="index.html" rel="external" data-icon="home">Home</a>
+                    </li>
+                    <li>
+                        <a href="#pageone" data-icon="grid" class="ui-btn-active">Menu</a>
+                    </li>
+                    <li>
+                        <a href="#pageAbout" data-icon="info">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End of Rafles Statue -->
+
+    <!-- Direction to Raffles Statue -->
+    <div data-role="page" id="tour2part2">
+        <div data-role="header">
+            <h1>Raffles Statue</h1>
+            <a href="#" onclick="goBack()" class="ui-btn ui-btn-inline ui-btn-icon-right
+                        ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all">Option</a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h3 align="center">Direction to Raffles Statue</h3>
+            <div id="tourmap4" class="MyMap"></div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+        </div>
+    </div>
+    <!-- End of Direction to Raffles Statue -->
+
+    <!-- Page Merlion Park -->
+    <div data-role="page" id="tour3">
+        <div data-role="header">
+            <h1>Merlion Park</h1>
+            <a href="#" onclick="goBack()" class="ui-btn ui-btn-inline ui-btn-icon-right
+                    ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all">Option</a>
+            <a href="#mypanel" class="ui-btn ui-btn-inline ui-btn-icon-right
+                    ui-icon-plus ui-btn-icon-notext ui-btn-right ui-shadow ui-corner-all">Option</a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div id="tourmap5" class="MyMap"></div>
+            <p>The lion head with a fish body resting on a crest of waves quickly became one of the most well-known images of
+                Singapore.
+            </p>
+            <img src="img/merlion.png" style="width:430px;height:300px; padding-bottom: 10px" />
+
+            <p>The body symbolises Singapore's humble beginnings as a fishing village when it was called Temasek, meaning 'sea
+                town' in Old Javanese.</p>
+            <p>Its head represents Singapore’s original name, Singapura, or ‘lion city’ in Malay. </p>
+            <p>Today, you can glimpse this legend at Merlion Park. Spouting water from its mouth, the Merlion statue stands
+                tall at 8.6 metres and weighs 70 tonnes. This icon is a ‘must-see’ for tourists visiting Singapore, similar
+                to other significant landmarks around the world. Built by local craftsman Lim Nang Seng.</p>
+            <br>
+            <a href="#tour3part2" class="ui-btn ui-corner-all">Click here to find out how to get there!</a>
+            <br>
+            <p>The original sculpture and its cub are the most well-known
+                <a href="#"> among the seven approved Merlion statues </a> in Singapore.
+            </p>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="index.html" rel="external" data-icon="home">Home</a>
+                    </li>
+                    <li>
+                        <a href="#pageone" data-icon="grid" class="ui-btn-active">Menu</a>
+                    </li>
+                    <li>
+                        <a href="#pageAbout" data-icon="info">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End of Merlion Park -->
+
+    <!-- Direction to Merlion Park -->
+    <div data-role="page" id="tour3part2">
+        <div data-role="header">
+            <h1>Merlion Park</h1>
+            <a href="#" onclick="goBack()" class="ui-btn ui-btn-inline ui-btn-icon-right
+                            ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all">Option</a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h3 align="center">Direction to Merlion Park</h3>
+            <div id="tourmap6" class="MyMap"></div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+        </div>
+    </div>
+    <!-- End of Direction to Merlion Park -->
+
+    <!-- Page of Orchard Road -->
+    <div data-role="page" id="tour4">
+        <div data-role="header">
+            <h1>Orchard Road</h1>
+            <a href="#" onclick="goBack()" class="ui-btn ui-btn-inline ui-btn-icon-right
+                    ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all">Option</a>
+            <a href="#mypanel" class="ui-btn ui-btn-inline ui-btn-icon-right
+                    ui-icon-plus ui-btn-icon-notext ui-btn-right ui-shadow ui-corner-all">Option</a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div id="tourmap7" class="MyMap"></div>
+            <p>Whether you're a first-time visitor or a seasoned shopper, Orchard Road, a 2.2km shopping belt, is the place
+                for retail therapy. Orchard road is a busy area filled with shops and offices around. Either during the day
+                or at night, Orchard road is always bustling with people. Either with foreigners or local Singaporeans! </p>
+            <img src="img/orchard.png" style="width:430px;height:300px; padding-bottom: 10px" />
+
+            <p>One of the biggest shopping centres, which is known as Takasyimaya, is located here! It has a variety of accessories,
+                clothes shoes and many more! Definitely a perfect place to shop! </p>
+
+            <p>If you are hungry or just want to grab a quick drink, then we recommend you to go to
+                <a href="#"> Mitzo Restaurant and Bar! </a> Designer threads, fast fashion, upscale restaurants, ethnic wares, art galleries
+                and relaxed hangouts – you name it, Orchard Road has it!</p>
+            <br>
+            <a href="#tour4part2" class="ui-btn ui-corner-all">Click here to find out how to get there!</a>
+            <br>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="index.html" rel="external" data-icon="home">Home</a>
+                    </li>
+                    <li>
+                        <a href="#pageMenu" data-icon="grid" class="ui-btn-active">Menu</a>
+                    </li>
+                    <li>
+                        <a href="#pageAbout" data-icon="info">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End of Orchard Road -->
+
+    <!-- Direction to Orchard Road -->
+    <div data-role="page" id="tour4part2">
+        <div data-role="header">
+            <h1>Orchard Road</h1>
+            <a href="#" onclick="goBack()" class="ui-btn ui-btn-inline ui-btn-icon-right
+                            ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all">Option</a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h3 align="center">Direction to Orchard Road</h3>
+            <div id="tourmap8" class="MyMap"></div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+        </div>
+    </div>
+    <!-- End of Direction to Orchard Road -->
+
+    <!-- Start of Gardens by the Bay -->
+    <div data-role="page" id="tour5">
+        <div data-role="header">
+            <h1>Gardens by the Bay</h1>
+            <a href="#" onclick="goBack()" class="ui-btn ui-btn-inline ui-btn-icon-right
+                    ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all">Option</a>
+            <a href="#mypanel" class="ui-btn ui-btn-inline ui-btn-icon-right
+                    ui-icon-plus ui-btn-icon-notext ui-btn-right ui-shadow ui-corner-all">Option</a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div id="tourmap9" class="MyMap"></div>
+            <p>Located next to Marina Reservoir, Gardens by the Bay offers breath-taking waterfront views. This multi-award
+                winning horticultural destination spans 101 hectares of reclaimed land, and is made up of two main areas
+                – Bay South Garden and Bay East Garden. </p>
+            <img src="img/intro2.jpg" style="width:430px;height:300px; padding-bottom: 10px" />
+
+            <p>Walk on the suspended walkway between two Supertrees to enjoy a bird’s eye view of the gardens and if you are
+                lucky enough, a very beautiful sunset. In the evening, catch the sky show off choreographed lights and sounds
+                at the Garden Rhapsody amidst the Supertrees.</p>
+
+            <p>Here, you will find plant life from tropical highlands up to 2,000 metres above sea level. The natural beauty
+                of the gardens translates indoors. Dine in style at a range of eateries across the gardens, from casual cafes
+                to posh restaurants, all with interiors designed to reflect the splendour of Gardens by the Bay.</p>
+            <img src="img/garden2.png" style="width:430px;height:300px; padding-bottom: 10px" />
+            <p>Come down to
+                <a href="#"> Satay by the bay </a> where you can bond with friends and family over local delights, while enjoying the
+                views of the waterfront. Satay by the Bay offers much more than just satay. In fact, a wide variety of Singapore
+                street food can be found there. Fried kway teow, carrot cake, laksa, roti prata, hokkien mee, BBQ chicken
+                wings and nasi bryiani are available. There are also stalls selling pizzas, Thai food, Turkish fare and Mediterranean
+                dishes.
+            </p>
+
+            <a href="#tour5part2" class="ui-btn ui-corner-all">Click here to find out how to get there!</a>
+            <br>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="index.html" rel="external" data-icon="home">Home</a>
+                    </li>
+                    <li>
+                        <a href="#pageone" data-icon="grid" class="ui-btn-active">Menu</a>
+                    </li>
+                    <li>
+                        <a href="#pageAbout" data-icon="info">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End of Gardens by the bay -->
+
+    <!-- Direction to Gardens by the Bay -->
+    <div data-role="page" id="tour5part2">
+        <div data-role="header">
+            <h1>Gardens by the Bay</h1>
+            <a href="#" onclick="goBack()" class="ui-btn ui-btn-inline ui-btn-icon-right
+                                ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all">Option</a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h3 align="center">Direction to Gardens by the Bay</h3>
+            <div id="tourmap10" class="MyMap"></div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+        </div>
+    </div>
+    <!-- End of Direction to Gardens by the Bay -->
+</body>
+
+</html>
